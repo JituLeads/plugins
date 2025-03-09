@@ -1,0 +1,89 @@
+/* Style Product Chat
+ * Description: Style for dynamic chat buttons for WooCommerce product pages with custom fields for contact options.
+ * Version: 1.0.0
+ * Author: JituLeads | Dicky Ibrohim
+ */
+/* WhatsApp Button */
+.marketing_wa {
+    display: flex;
+    padding: 8px;
+    gap: 15px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #fff;
+    border-radius: 60px;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.marketing_wa img {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    margin-bottom: -6px;
+}
+
+.marketingjituleads_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.marketingjituleads_text {
+    font-size: 14px;
+}
+
+.marketingjituleads_status {
+    background: #d9ff27f0;
+    border-radius: 7px;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #111;
+}
+
+.marketingjituleads_desc {
+    font-weight: 600;
+}
+
+/* Email Button */
+.marketing_email {
+    display: flex;
+    padding: 8px;
+    gap: 15px;
+    background: linear-gradient(135deg, #d32525, #961414);
+    color: #fff;
+    border-radius: 60px;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.marketing_email img {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    margin-bottom: -6px;
+}
+
+/* Phone Button */
+.marketing_telp {
+    display: flex;
+    padding: 8px;
+    gap: 15px;
+    background: linear-gradient(135deg, #257fd3, #145396);
+    color: #fff;
+    border-radius: 60px;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.marketing_telp img {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    margin-bottom: -6px;
+}
