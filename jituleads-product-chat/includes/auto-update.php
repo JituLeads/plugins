@@ -1,6 +1,5 @@
 <?php
 /* Auto-update functionality for JituLeads Product Chat plugin.
- * Description: Style for dynamic chat buttons for WooCommerce product pages with custom fields for contact options.
  * Version: 1.0.0
  * Author: JituLeads | Dicky Ibrohim
  */
@@ -53,7 +52,7 @@ function jituleads_plugin_info($res, $action, $args) {
     }
 
     // URL ke file JSON yang berisi informasi plugin
-    $remote_url = 'https://shop.jituleads.com/api/wp/update/jituleads-product-chat-updater.json';
+    $remote_url = 'https://shop.jituleads.com/api/wp/update/jituleads-product-chat-updater-testing.json';
 
     // Ambil data JSON dari server
     $remote_json = wp_remote_get($remote_url, array('timeout' => 10, 'headers' => array('Accept' => 'application/json')));
@@ -71,14 +70,23 @@ function jituleads_plugin_info($res, $action, $args) {
             'version'       => $remote_data->version,
             'tested'        => $remote_data->tested,
             'requires'      => $remote_data->requires,
+            'last_updated'  => $remote_data->last_updated,
+            'author'        => $remote_data->author,
+            'homepage'      => $remote_data->homepage,
             'download_link' => $remote_data->download_url,
             'sections'      => array(
-                'description' => 'A plugin to add dynamic chat buttons for WooCommerce product pages with custom fields for contact options.',
-                'changelog'   => '== Changelog ==<br><br>'
-                               . '= 1.0.1 =<br>'
-                               . '* Fixed minor bugs.<br>'
-                               . '* Improved performance.',
+                'description' => $remote_data->sections->description,
+                'changelog'   => $remote_data->sections->changelog,
             ),
+            'banners'       => array(
+                'low'  => $remote_data->banners->low,
+                'high' => $remote_data->banners->high,
+            ),
+            'icons'         => array(
+                '1x' => $remote_data->icons->{'1x'},
+                '2x' => $remote_data->icons->{'2x'},
+            ),
+            'faq'           => (array) $remote_data->faq, // Konversi objek FAQ ke array
         );
     }
 

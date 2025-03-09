@@ -3,7 +3,7 @@
  * Plugin Name: JituLeads Product Chat
  * Plugin URI: https://www.jituleads.com/
  * Description: A plugin to add dynamic chat buttons for WooCommerce product pages with custom fields for contact options.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: JituLeads | Dicky Ibrohim
  * Author URI: https://www.jituleads.com/
  * Text Domain: jitu-leads
