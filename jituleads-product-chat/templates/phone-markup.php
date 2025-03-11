@@ -15,7 +15,7 @@ if (get_option('enable_phone')) {
             <div class="marketingjituleads_content">
                 <span class="marketingjituleads_text"><?php _e("Sales", "jitu-leads"); ?></span>
                 <span class="marketingjituleads_status"><?php _e("online", "jitu-leads"); ?></span>
-                <span class="marketingjituleads_desc"><?php _e("Minat? Kirim Telp", "jitu-leads"); ?></span>
+                <span class="marketingjituleads_desc"><?php _e("Minat? Telp", "jitu-leads"); ?></span>
             </div>
         </div>
     </a>

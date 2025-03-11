@@ -52,7 +52,7 @@ function jituleads_plugin_info($res, $action, $args) {
     }
 
     // URL ke file JSON yang berisi informasi plugin
-    $remote_url = 'https://shop.jituleads.com/api/wp/update/jituleads-product-chat-updater-testing.json';
+    $remote_url = 'https://shop.jituleads.com/api/wp/update/jituleads-product-chat-updater.json';
 
     // Ambil data JSON dari server
     $remote_json = wp_remote_get($remote_url, array('timeout' => 10, 'headers' => array('Accept' => 'application/json')));
