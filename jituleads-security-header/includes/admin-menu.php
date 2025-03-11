@@ -31,7 +31,7 @@ function jituleads_security_handle_form_submission() {
         return;
     }
     
-    // Daftar header keys.
+    // List of header keys.
     $default_headers = array(
         'strict_transport_security',
         'x_content_type_options',
@@ -51,7 +51,7 @@ function jituleads_security_handle_form_submission() {
     $options['enable_all'] = (isset($_POST['enable_all']) && $_POST['enable_all'] == '1') ? true : false;
     $options['headers']   = array();
     
-    // Loop untuk setiap header: gunakan wp_unslash untuk menghindari penambahan backslashes.
+    // Loop through each header: use wp_unslash to avoid adding extra backslashes.
     foreach ($default_headers as $header_key) {
         $enabled = (isset($_POST[$header_key . '_enabled']) && $_POST[$header_key . '_enabled'] == '1') ? true : false;
         $value   = isset($_POST[$header_key . '_value']) ? sanitize_text_field(wp_unslash($_POST[$header_key . '_value'])) : '';
@@ -63,7 +63,7 @@ function jituleads_security_handle_form_submission() {
     
     update_option('jituleads_security_options', $options);
     
-    // Redirect kembali ke halaman settings.
+    // Redirect back to the settings page.
     wp_redirect(add_query_arg('page', 'jituleads-security-header', admin_url('options-general.php')));
     exit;
 }
@@ -208,7 +208,7 @@ function jituleads_security_options_page() {
                 ),
             );
             
-            // Loop untuk membuat field untuk masing-masing header.
+            // Loop to create a field for each header.
             foreach ($headers_info as $key => $info) {
                 $current_enabled = isset($options['headers'][$key]['enabled']) ? $options['headers'][$key]['enabled'] : false;
                 $current_value   = isset($options['headers'][$key]['value']) ? $options['headers'][$key]['value'] : '';

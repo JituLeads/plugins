@@ -15,7 +15,7 @@ function jituleads_optimized_security_headers() {
         return;
     }
     
-    // Mapping dari key opsi ke nama header.
+    // Mapping from option key to header name.
     $headers_mapping = array(
         'strict_transport_security'       => 'Strict-Transport-Security',
         'x_content_type_options'            => 'X-Content-Type-Options',
@@ -31,21 +31,21 @@ function jituleads_optimized_security_headers() {
         'x_permitted_cross_domain_policies' => 'X-Permitted-Cross-Domain-Policies'
     );
     
-    // Hapus header yang mungkin sudah di-set agar tidak terjadi konflik.
+    // Remove any headers that may have already been set to avoid conflicts.
     foreach ($headers_mapping as $header_name) {
         header_remove($header_name);
     }
     
-    // Loop melalui setiap header dan terapkan jika:
-    // - Global "Activate All" diaktifkan, atau
-    // - Opsi individual header diaktifkan
+    // Loop through each header and apply if:
+    // - Global "Activate All" is enabled, or
+    // - The individual header option is enabled.
     foreach ($headers_mapping as $key => $header_name) {
         $apply = false;
         if ( isset($options['enable_all']) && $options['enable_all'] ) {
-            // Jika global aktif, terapkan header apapun nilainya.
+            // If global is active, apply the header regardless of its value.
             $apply = true;
         } elseif ( isset($options['headers'][$key]['enabled']) && $options['headers'][$key]['enabled'] ) {
-            // Jika global tidak aktif, terapkan hanya jika header individual diaktifkan.
+            // If global is not active, apply only if the individual header is enabled.
             $apply = true;
         }
         
